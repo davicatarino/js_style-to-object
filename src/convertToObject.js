@@ -7,16 +7,17 @@
  */
 function convertToObject(sourceString) {
   const styles = sourceString
-    .split(';') // Split the string into individual declarations
-    .map(style => style.trim()) // Trim whitespace from each declaration
-    .filter(Boolean); // Remove any empty strings
+    .split(';')
+    .map((style) => style.trim())
+    .filter(Boolean);
 
   const result = {};
 
   for (const style of styles) {
-    const [key, value] = style.split(':'); // Split each declaration into key and value
+    const [key, value] = style.split(':');
+
     if (key && value) {
-      result[key.trim()] = value.trim(); // Assign the trimmed key-value pair to the result object
+      result[key.trim()] = value.trim();
     }
   }
 
